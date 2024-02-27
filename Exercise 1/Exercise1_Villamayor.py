@@ -1,7 +1,7 @@
 """
 GE 120: Intro
 Erianne Villamayor
-hi
+Machine Exercise 1
 """
 
 # dms = 118.42069
@@ -22,7 +22,7 @@ hi
 
 # print("DMS:" + str(degree) + "-" + str(minutes_fractional) + "-" + str(round(seconds, 2)))
 
-#Must be a string input
+# Must be a string input
 
 dms = "118-25-14.48"
 values= dms.split('-')
