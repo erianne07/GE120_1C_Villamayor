@@ -1,26 +1,30 @@
 """
-GE 120: Intro
+GE 120
 Erianne Villamayor
 Machine Exercise 1
 """
 
 dms = 118.42069
 
-#Kunin si degree part
+#Get the Degrees
 degree = int(dms)
 print("degree", 118)
 
-#Kunin si minutes
+#Get the Minutes
 minutes = (dms - degree) * 60
 
 minutes_fractional = int(minutes)
 
+#Get Seconds
 seconds = (minutes - minutes_fractional) * 60
 
-print("minutes pero naka degree pa", minutes_fractional)
-print("seconds pero naka degree pa", seconds)
+print("minutes:", minutes_fractional)
+print("seconds:", seconds)
 
+
+#Combine to make DMS
 print("DMS:" + str(degree) + "-" + str(minutes_fractional) + "-" + str(round(seconds, 2)))
+
 
 # Must be a string input
 
@@ -35,4 +39,4 @@ seconds = float(values[2])
 
 dd = degrees + (minutes/60) + (seconds/3600)
 
-print("ETO YUNG VALUE NG DD:", round(dd,6))
+print("Value of DD:", round(dd,6))
