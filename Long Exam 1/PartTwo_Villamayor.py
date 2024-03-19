@@ -32,7 +32,7 @@ sumDist = 0
 
 #Creating prompt function
 float(input(PROMPT))
-Running_elevation = 100
+initialElevation = 100
 
 #Define the what the True and False variables are
 while True:
@@ -57,8 +57,8 @@ while True:
 #Computing for Total Distance
 BacksightDistance = backsight * 100
 ForesightDistance = foresight * 100
-height_of_the_instrument = Running_elevation - BacksightDistance
-elevation_of_turning_point = BacksightDistance + height_of_the_instrument
+height_of_the_instrument = initialElevation + BacksightDistance
+elevation_of_turning_point =  height_of_the_instrument - ForesightDistance
 
 
 
