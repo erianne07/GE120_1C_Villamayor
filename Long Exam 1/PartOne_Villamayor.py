@@ -10,9 +10,11 @@ can access this and apply changes or revisions without the need of having to dow
 infinitely faster. Just knowing the basics like committing, pushing, pulling, and the likes is all you are required to know in order to use
 github to its full extent. 
 
-3.  While loops can be used when describing something especially when using True or False variables. It is especially helpful in determining
-whether what the user inputted is the information being asked or required. If yes then the loop will move on, if not then the loop will ask the
-initial question once again. For "for loops" these loops are used to specify a value or a function to be used.
+3.  While loops can be used when describing something, it is also used when you want an input function to ask certain things in order to create an output. 
+It is especially helpful in determining whether what the user inputted is the information being asked or required. 
+If yes then the loop will move on, if not then the loop will ask the initial question once again. Example of this is when you are creating a table for data
+you can program it to ask if you wish to add more data or not.
+For "for loops" these loops are used to specify a value or a function to be used.
 
 4. The Divide and Conquer paradigm in programming, in simpler terms,
 is a way to solve complex problems by breaking it down into smaller subproblems so that it can be easier or manageable to create solutions for.
