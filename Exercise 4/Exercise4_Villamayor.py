@@ -24,7 +24,7 @@ class Line:
 
         Output:
         Latitude - float
-         """
+        """
         
         latitude = -float(self.distance) * cos(radians(self.azimuth))
         
@@ -34,12 +34,12 @@ class Line:
         """
         Compute for the departure of a given line.
 
-         Input:
-         distance - float
+        Input:
+        distance - float
         azimuth - float
 
         Output:
-         Departure - float
+        Departure - float
         """
 
         departure = -float(self.distance) * sin(radians(self.azimuth))
