@@ -116,7 +116,7 @@ for (var line of lines){
     console.log(
         line[0].toString().padEnd(10),
         line[1].toString().padEnd(10), 
-        line[2].toString().padEnd(15), 
+        line[2].padEnd(15), 
         line[3].toPrecision(5).toString().padEnd(10), 
         line[4].toPrecision(5).toString().padEnd(10)
     )    
