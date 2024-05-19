@@ -50,6 +50,30 @@ function azimuthToBearing(azimuth){
     Output:
     bearing - string
     */
+
+    var azimuth = azimuth%360;
+    var bearing;
+
+    if (azimuth > 0 && azimuth < 90){
+        bearing = 'S '.concat(azimuth.toPrecision(5).toString(), ' W')
+    } else if (azimuth > 90 && azimuth <180){
+        bearing = 'N '.concat((180-azimuth).toPrecision(5).toString(), ' W')
+    } else if (azimuth > 180 && azimuth < 270){
+        bearing = 'N '.concat((azimuth - 180).toPrecision(5).toString(), ' E')
+    } else if (azimuth > 270  && azimuth <360){
+        bearing = 'S '.concat((360 - azimuth).toPrecision(5).toString(), ' E')
+    } else if (azimuth == 0){
+        bearing = "DUE SOUTH"
+    } else if (azimuth == 90){
+        bearing = "DUE WEST"
+    } else if (azimuth == 180){
+        bearing = "DUE NORTH"
+    } else if (azimuth == 270){
+        bearing == "DUE EAST"
+    } else {
+        bearing == "EWAN KO"
+    }
+    return bearing
 }
 
 //Sentinel Controlled Loop
@@ -90,12 +114,12 @@ for (var i = 0; i < data.length; i++){
 console.log("LINE NO.".padEnd(10), "DISTANCE".padEnd(10), "BEARING".padEnd(15), "LATITUDE".padEnd(10), "DEPARTURE".padEnd(10))
 for (var line of lines){
     console.log(
-    line[0].toString().padEnd(10),
-    line[1].toString().padEnd(10), 
-    line[2].padEnd(15), 
-    line[3].toPrecision(5).toString().padEnd(10), 
-    line[4].toPrecision(5).toString().padEnd(10)
-)    
+        line[0].toString().padEnd(10),
+        line[1].toString().padEnd(10), 
+        line[2].toString().padEnd(15), 
+        line[3].toPrecision(5).toString().padEnd(10), 
+        line[4].toPrecision(5).toString().padEnd(10)
+    )    
 }
 
 console.log("SUMMATION OF LAT:", sumLat.toPrecision(5))
