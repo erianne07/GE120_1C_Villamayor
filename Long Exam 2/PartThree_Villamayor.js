@@ -12,7 +12,9 @@ export default function App() {
   
 /*
 Given the following specifications for this design, what React Native components do you suggest are needed to develop this app?
-- Stylesheet, Text, View, Button, TextInput, and picker
+- given the designs specifications, I think the React Native components that is best to use to develop this app are picker, for the change in azimuth to bearing
+and vice versa, TextInput, so that you will be able to input the values that you will be requiring, button to initialize the conversion of azimuth to bearing and 
+vice versa.
 */
   
   function convertValue(value){
@@ -54,8 +56,9 @@ if (inputCase == "1") {
     var degrees = Math.floor(value)
     var minutes = Math.floor((value-degrees)*60)
     var seconds = Math.round((value-degrees-(minutes/60))*3600)
+   
     
-    var output = degrees.toString().concat("-", minutes.toString(),"-", seconds.toString())
+    var output = degrees.toString().concat("-", minutes.toString(),"-", seconds.toString())%360
     setOuputValue(output)
 }
 else {
@@ -63,7 +66,7 @@ else {
   var output = parseFloat(elements[0])+ parseFloat(elements[1]/60) + parseFloat(elements[2]/3600)
   setOuputValue(output)
 }(
-            <View style={styles.box}>
+    <View style={styles.box}>
       <View style={styles.sherly}>
         <Text style={styles.titleText}>WELCOME TO AZIMUTH TO BEARING CONVERTER!</Text>
       </View>

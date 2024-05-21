@@ -66,7 +66,7 @@ class Riparian(Parcel):
         return classification
     
     def type(self):
-        if type == 
+        if type == 1:
 
 #This is for the Sentinel Controlled Loop
 counter = 1
@@ -74,7 +74,7 @@ lines = []
 
 while True:
     print()
-    print("CLASSIFICATION", )
+    print("A parcel of land owned by <name of owner> with an area of <lot area> square meters", )
 
     you_have_mistyped = False
     while not (you_have_mistyped):
