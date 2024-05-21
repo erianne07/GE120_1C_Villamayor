@@ -5,7 +5,9 @@ in the code. While OOP is made easier because it allows people to use different 
 and the like. OOP is more straight to the point and 'user friendly'
 
 
-2. GUI helps in creating programs and applications because it makes coding easier to do and perform.
+2. GUI helps in creating programs and applications because it makes coding easier to do and perform. It helps you create an application
+that can be used to help in the field of geomatics, like when you create a DMS to DD converter or vice versa, as well as a azimuth to bearing or
+bearing to azimuth converter. You can even program an application that lets you easily find a POI or benchmarks.
 
 
 3. Operation overloading in OOP is when you have an already existing function and overload it using specific steps, so that you can

@@ -2,42 +2,28 @@
 from math import cos, sin, radians, sqrt
 
 class Parcel:
+    owner = input("Name of Owner:")
+    area = input("Area of Lot:")
 
-    def __init__(self, area, distance, lot):
+    def __init__(self, area, classification):
         self.area = area
-        self.distance = distance
-        self.lot = lot
+        self.classiication = classification
 
-    def lot(self):
+    def Classification(self):
         """
-        Compute for the lot of given parcel of land.
+        get the classification of land based on the lot size.
 
         Input:
-        distance - float
+        area - float
 
         Output:
-        lot - float
+        classification - float
         """
         
-        lot = -float(self.distance) * cos(radians(self.azimuth))
+        classification = -float(self.area) 
         
-        return 
+        return classification
 
-    def distance(self):
-        """
-        Compute for the departure of a given line.
-
-        Input:
-        distance - float
-        azimuth - float
-
-        Output:
-        Departure - float
-        """
-
-        departure = -float(self.distance) * sin(radians(self.azimuth))
-
-        return departure
 
     def area(self):
         """
@@ -50,36 +36,37 @@ class Parcel:
         area - string
         """
 
-#set up values for the angles
+#set up values for the area
     
-        if lot > 0 and lot < 10000:
-            area = 'Residential'.format(round(area,3))
-        elif lot > 10000 and lot < 120000:
-            area = 'Private Agricultural'.format(round(10000- area,3))
-        elif lot > 120000:
-            area = 'Public Agricultural'.format(round(area - 10000,3))
+        if area > 0 and area < 10000:
+            classification = 'Residential'.format(round(area,3))
+        elif area > 10000 and area < 120000:
+            classification = 'Private Agricultural'.format(round(10000- area,3))
+        elif area > 120000:
+            classification = 'Public Agricultural'.format(round(area - 10000,3))
         else:
-            area = "DNE"
+            classification = "DNE"
 
-            return area
+            return classification
+#Print the function
+print("A parcel of land owned by ")
         
-class Cardinal(Parcel):
+class Riparian(Parcel):
 
-    def __init__(self, distance, azimuth):
-        super().__init__(distance, azimuth)
+    def __str__(self, area, classification):
+        super().__init__(self, area, classification)
         
     def area(self):
-        if lot == 0:
-            area = "DUE SOUTH"
-        elif azimuth == 90:
-            bearing = "DUE WEST"
-        elif azimuth == 180:
-            bearing = "DUE NORTH"
-        elif azimuth == 270:
-            bearing = "DUE EAST"
+        if area == 10000:
+            classification = "Residential"
+        elif area == 120000:
+            classification = "Private Agricultural "
         else:
-            bearing = "EWAN KO"
-        return bearing
+            classification = "EWAN KO"
+        return classification
+    
+    def type(self):
+        if type == 
 
 #This is for the Sentinel Controlled Loop
 counter = 1
@@ -87,11 +74,12 @@ lines = []
 
 while True:
     print()
-    print("LINE NO.", counter)
+    print("CLASSIFICATION", )
 
     you_have_mistyped = False
     while not (you_have_mistyped):
-        distance = input("Distance: ")
+        owner = input("Name of Owner:")
+        area = input("Area: ")
         if you_have_mistyped:
             print("TRY AGAIN")
             continue
@@ -99,20 +87,8 @@ while True:
             break
     lot = input("Size of the Lot: ") 
 
-    if "-" in str(azimuth): #if the given is DMS
-        degrees, minutes, seconds = azimuth.split("-")
-        azimuth = (int(degrees) + (int(minutes)/60) + (float(seconds)/3600))%360
-    else: 
-        azimuth = float(azimuth)%360
-
-    if azimuth % 90 == 0:
-        line = Cardinal(distance, azimuth)
-    else:
-        line = Parcel(distance, azimuth)
-
-
    
-    lines.append((counter, line.distance, line.bearing(), line.latitude(), line.departure()))
+    lines.append((counter, lines.distance, lines.area(), lines.lotType()))
 
 #Setting up the Input and table
     yn = input("Add new line? ")
@@ -123,9 +99,9 @@ while True:
         break
 
 print("\n\n")
-print('{: ^10} {: ^10} {: ^10} {: ^10} {: ^10}'.format())
+print('{: ^10} {: ^10} {: ^10} {: ^10} {: ^10}'.format("DISTANCE", "AREA", "LAND CLASSIFICATION"))
 for line in lines:
-    print('{: ^10} {: ^10} {: ^10} {: ^10} {: ^10}'.format(line[0], line[1], line[2], round(line[3],3), round(line[4],3)))
+    print('{: ^10} {: ^10} {: ^10} {: ^10} {: ^10}'.format(line[0], line[1], line[2]))
 
 print("------END-------")
 
