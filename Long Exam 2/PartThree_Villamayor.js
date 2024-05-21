@@ -50,17 +50,20 @@ Given the following specifications for this design, what React Native components
     }
     return bearing
 } 
-    if {
-        var output = bearing.toString().concat()
-        setOutputValue(output)
-    },
-    else {
-      var elements = value.split("-")
-      var output = parseFloat(elements[0])+ parseFloat(elements[1]/60) + parseFloat(elements[2]/3600)
-      setOuputValue(output)
-    }
-}{(
-        <View style={styles.box}>
+if (inputCase == "1") {
+    var degrees = Math.floor(value)
+    var minutes = Math.floor((value-degrees)*60)
+    var seconds = Math.round((value-degrees-(minutes/60))*3600)
+    
+    var output = degrees.toString().concat("-", minutes.toString(),"-", seconds.toString())
+    setOuputValue(output)
+}
+else {
+  var elements = value.split("-")
+  var output = parseFloat(elements[0])+ parseFloat(elements[1]/60) + parseFloat(elements[2]/3600)
+  setOuputValue(output)
+}(
+            <View style={styles.box}>
       <View style={styles.sherly}>
         <Text style={styles.titleText}>WELCOME TO AZIMUTH TO BEARING CONVERTER!</Text>
       </View>
